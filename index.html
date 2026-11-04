@@ -1125,6 +1125,9 @@ function mapFallback(msg){mapBox.classList.add('map-failed');mapBox.innerHTML='<
 mapBox.innerHTML='<div class="map-placeholder"><span>Карта загружается…</span><a class="btn" href="'+CONFIG.yandexRoute+'" target="_blank" rel="noopener">Открыть в Яндекс Картах ↗</a></div>';
 function loadScript(src){return new Promise((ok,fail)=>{const s=document.createElement('script'),t=setTimeout(()=>{s.remove();fail(Error('timeout'));},20000);s.src=src;s.onload=()=>{clearTimeout(t);ok();};s.onerror=()=>{clearTimeout(t);fail(Error('load'));};document.head.append(s);});}
 function decorateMap(){if(!mapShadow)return;
+  /* короткая подпись карты: источники сохранены, полный текст не занимает место */
+  const at=mapShadow.querySelector('.maplibregl-ctrl-attrib-inner');
+  if(at&&at.dataset.short!=='1'){at.dataset.short='1';at.innerHTML='© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · <a href="https://openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a>';}
   mapShadow.querySelectorAll('.bspm-marker').forEach((b,i)=>{b.classList.toggle('g-done',state.done.has(i)&&i!==state.index);b.classList.toggle('g-now',i===state.index);});
   const card=mapShadow.querySelector('.bspm-tooltip');
   if(card&&!card.querySelector('.g-acts')){const i=STOPS.findIndex(s=>card.querySelector('.bspm-popup-title')?.textContent===s.title);
