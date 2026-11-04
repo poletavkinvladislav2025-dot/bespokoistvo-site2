@@ -814,28 +814,21 @@ const MOROZ_OLD='Особняк_Арсения_Морозова.jpg';
 /* Фото. now / old / alt — основные; more — дополнительные снимки (показываются кнопками).
    Подписи label — то, что видит гость на кнопке. Чтобы поменять подпись, правьте её здесь. */
 const PHOTOS={
-  /* 01 — особняк Рябушинского: 2024 + два снимка автора */
-  ryabushinsky:{
-    now:{src:'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Moscow._Ryabushinsky_House_P4141842_2600.jpg/960px-Moscow._Ryabushinsky_House_P4141842_2600.jpg',label:'2024',credit:'2024 · Alexxx1979 · <a href="https://commons.wikimedia.org/wiki/File:Moscow._Ryabushinsky_House_P4141842_2600.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>'},
-    more:[{src:'img/s1a.jpg',label:'Сейчас · 2',credit:'Фото: авторы гида'},{src:'img/s1b.jpg',label:'Сейчас · 3',credit:'Фото: авторы гида'}]
-  },
-  /* 02 — памятник Андреева (Гоголь) */
-  /* 02 — Дом Гоголя: дом сейчас, старое фото, памятник */
-  'gogol-andreev':{now:{src:'img/s2a.jpg',label:'Сейчас',credit:'Фото: авторы гида'},more:[{src:'img/s2b.jpg',label:'Старое фото',credit:'Фото: авторы гида'},{src:'img/s2c.jpg',label:'Памятник',credit:'Фото: авторы гида'}]},
-  /* 03 — памятник Гоголю работы Томского: памятник + столб */
-  'gogol-tomsky':{now:{src:'img/s3a.jpg',label:'Сейчас',credit:'Фото: авторы гида'},more:[{src:'img/s3b.jpg',label:'Сейчас · 2',credit:'Фото: авторы гида'}]},
-  /* 04 — дом Моссельпрома */
+  /* 1 — Особняк Рябушинского: две фотографии из папки «1» */
+  ryabushinsky:{now:{src:'img/s1a.jpg',label:'Сейчас',credit:'Фото: авторы гида'},more:[{src:'img/s1b.jpg',label:'Сейчас · 2',credit:'Фото: авторы гида'}]},
+  /* 2 — Дом Гоголя: дом, старое фото, памятник */
+  'gogol-andreev':{now:{src:'img/s2a.jpg',label:'Дом',credit:'Фото: авторы гида'},more:[{src:'img/s2b.jpg',label:'Старое фото',credit:'Фото: авторы гида'},{src:'img/s2c.jpg',label:'Памятник',credit:'Фото: авторы гида'}]},
+  /* 3 — памятник Гоголю работы Томского: памятник и фонарь */
+  'gogol-tomsky':{now:{src:'img/s3a.jpg',label:'Памятник',credit:'Фото: авторы гида'},more:[{src:'img/s3b.jpg',label:'Фонарь',credit:'Фото: авторы гида'}]},
+  /* 4 — дом Моссельпрома */
   mosselprom:{now:{src:'img/s4.jpg',label:'Сейчас',credit:'Фото: авторы гида'}},
-  /* 05 — особняк Арсения Морозова */
-  'arseny-morozov':{
-    now:{src:'img/s5.jpg',label:'Сейчас',credit:'Фото: авторы гида'},
-    old:{src:'https://upload.wikimedia.org/wikipedia/commons/b/ba/'+encodeURIComponent(MOROZ_OLD),label:'1899–1909',credit:'1899–1909 · автор неизвестен · <a href="https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(MOROZ_OLD)+'" target="_blank" rel="noopener">Wikimedia Commons · общественное достояние</a>'},
-  },
-  /* 06 — особняк Варвары Морозовой */
+  /* 5 — особняк Арсения Морозова */
+  'arseny-morozov':{now:{src:'img/s5.jpg',label:'Сейчас',credit:'Фото: авторы гида'}},
+  /* 6 — особняк Варвары Морозовой */
   'varvara-morozova':{now:{src:'img/s6.jpg',label:'Сейчас',credit:'Фото: авторы гида'}},
-  /* 07 — психологический институт */
+  /* 7 — психологический институт */
   'psychology':{now:{src:'img/s7.jpg',label:'Сейчас',credit:'Фото: авторы гида'}},
-  /* 08 — старое здание МГУ */
+  /* 8 — старое здание МГУ */
   'old-msu':{now:{src:'img/s8.jpg',label:'Сейчас',credit:'Фото: авторы гида'}}
 };
 
