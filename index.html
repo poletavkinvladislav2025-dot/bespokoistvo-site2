@@ -764,6 +764,8 @@ show();
   const heights=[12,20,33,18,45,57,35,19,30,52,60,42,24,12,28,46,58,37,18,33,48,21,12,29,44,25,13,32,51,35,19,10];
   root.querySelector('.wave').innerHTML=heights.map(h=>'<span style="height:'+h+'px"></span>').join('');
   let audio=null;
+  window.addEventListener('hashchange',()=>{if(location.hash!=='#progulka'&&audio)audio.pause();});
+  document.addEventListener('play',e=>{if(audio&&e.target!==audio)audio.pause();},true);
   root.querySelector('#bw-play').addEventListener('click',()=>{
     if(SITE.fragmentUrl){
       if(!audio){
@@ -1161,7 +1163,7 @@ $('#ag-reset').addEventListener('click',()=>{if(!confirm('Сбросить пр�
 /* ---------- Старт ---------- */
 renderStop();loadAudio();updateTime();weather();
 window.addEventListener('hashchange',()=>{if(location.hash!=='#gid')audio.pause();});
-function firstVisitPrep(){try{if(store.get(PREP_KEY)||!matchMedia('(max-width:899px)').matches||location.hash!=='#gid'||prep.open)return;openPrep();}catch(e){}}
+function firstVisitPrep(){try{if(store.get(PREP_KEY)||!matchMedia('(max-width:899px)').matches||location.hash!=='#gid'||prep.open)return;setTimeout(()=>{if(location.hash==='#gid'&&!prep.open&&!store.get(PREP_KEY))openPrep();},700);}catch(e){}}
 firstVisitPrep();
 window.addEventListener('hashchange',firstVisitPrep);
 function fillPrep(s,c){const pk=document.getElementById('ag-prep-weather');if(!pk)return;pk.innerHTML='<p><strong>Сейчас '+deg(c.t)+', ощущается '+deg(c.feel)+'.</strong> '+(s.rec||'')+'</p>'+(s.items.length?'<p><strong>Возьмите с собой:</strong></p><ul>'+s.items.map(i=>'<li>'+i+'</li>').join('')+'</ul>':'');}
