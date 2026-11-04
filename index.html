@@ -423,15 +423,15 @@ html,body{margin:0;background:#f0eee6}
   #guide .g-layout>aside.g-route{display:block;position:sticky;top:68px;align-self:start;max-height:calc(100dvh - 68px);overflow:auto;padding:24px 20px;border-right:1px solid var(--line)}
   #guide main{padding:24px 32px 32px}
   #guide .g-stop-view{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:0 28px;align-items:start}
-  #guide .g-stop-view>.g-photo{grid-column:1;grid-row:1/9}
+  #guide .g-stop-view>.g-photo{grid-column:1;grid-row:1/12;align-self:start;margin-bottom:0}
+  #guide .g-stop-view>.g-photo .g-frame{height:auto;aspect-ratio:4/5}
   #guide .g-stop-view>*:not(.g-photo){grid-column:2}
   #guide .g-stop-view.no-photo{grid-template-columns:minmax(0,700px)}
   #guide .g-stop-view.no-photo>*{grid-column:1!important}
   #guide h1{font-size:40px;margin-top:8px}
   #guide .g-frame{height:380px}
-  #guide .g-lower{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,1fr);gap:0 18px;align-items:start}
-  #guide .g-lower>.g-map{grid-column:1;grid-row:1/4;margin-top:18px}
-  #guide .g-lower>:not(.g-map){grid-column:2}
+  #guide .g-lower{display:block}
+  #guide .g-lower>.g-map{margin-top:18px}
   #guide #ag-live-map{height:440px}
   #guide .mini{padding-left:28px;padding-right:28px}
   #guide .full{bottom:16px;border-radius:16px}
@@ -610,7 +610,14 @@ html,body{margin:0;background:#f0eee6}
           <button type="button" id="ag-tab-text" aria-expanded="false" aria-controls="ag-panel" hidden>Текст</button>
         </div>
         <div class="g-panel" id="ag-panel" hidden></div>
-        <details class="g-weather" id="ag-weather" open><summary><span>Загружаем прогноз…</span></summary></details>
+
+        <section class="g-next" id="ag-next-card" aria-labelledby="ag-next-title">
+          <div class="eyebrow">Следующая остановка</div>
+          <h2 class="g-next-title" id="ag-next-title"></h2>
+          <div class="g-next-metrics" id="ag-next-metrics"></div>
+          <a class="btn btn-block" id="ag-walk" target="_blank" rel="noopener">Маршрут до неё ↗</a>
+        </section>
+        <details class="g-weather" id="ag-weather"><summary><span>Загружаем прогноз…</span></summary></details>
       </section>
 
       <div class="g-lower">
@@ -622,13 +629,6 @@ html,body{margin:0;background:#f0eee6}
             </div>
           </div>
           <div id="ag-live-map" role="region" aria-label="Карта остановок"></div>
-        </section>
-
-        <section class="g-next" id="ag-next-card" aria-labelledby="ag-next-title">
-          <div class="eyebrow">Следующая остановка</div>
-          <h2 class="g-next-title" id="ag-next-title"></h2>
-          <div class="g-next-metrics" id="ag-next-metrics"></div>
-          <a class="btn btn-block" id="ag-walk" target="_blank" rel="noopener">Маршрут до неё ↗</a>
         </section>
 
         <section class="g-finish" id="ag-finish-card" hidden>
